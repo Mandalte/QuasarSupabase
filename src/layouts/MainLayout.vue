@@ -12,7 +12,7 @@
         />
 
         <q-toolbar-title>
-          Tens Pay
+          Stock 
         </q-toolbar-title>
 
         <div>
@@ -40,7 +40,7 @@
         <q-item-label
           header
         >
-          Essential Links
+          Menu
         </q-item-label>
 
         <EssentialLink
@@ -59,17 +59,40 @@
 </template>
   
 <script>
+import EssentialLink from 'src/components/EssentialLink.vue'
 import { defineComponent, ref } from 'vue'
 import useAuthUser from 'src/composables/UseAuthUser'
 import router from 'src/router'
 import { useRouter } from 'vue-router'
 import { useQuasar} from 'quasar'
 
+const linksList = [
+  {
+    title:'Home',
+    caption:'',
+    icon:'mdi-home',
+    routeName:'me'
+  },
+  {
+    title:'Categorias',
+    caption:'',
+    icon:'mdi-shape-outline',
+    routeName:'list-category'
+  }
+  ,{
+    title:'Produtos',
+    caption:'',
+    icon:'mdi-product',
+    routeName:'list-produto'
+  }
+]
 
 
 export default defineComponent({
   name: 'MainLayout',
-
+  components:{
+    EssentialLink
+  },
   setup () {
     const leftDrawerOpen = ref(false)
     const {logout} = useAuthUser()
@@ -93,6 +116,7 @@ export default defineComponent({
       }
 
     return {
+      essentialLinks: linksList,
       leftDrawerOpen,
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value

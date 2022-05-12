@@ -35,7 +35,7 @@ module.exports = configure(function (/* ctx */) {
     // https://github.com/quasarframework/quasar/tree/dev/extras
     extras: [
       // 'ionicons-v4',
-      // 'mdi-v5',
+      'mdi-v5',
       // 'fontawesome-v6',
       // 'eva-icons',
       // 'themify',
@@ -106,7 +106,9 @@ module.exports = configure(function (/* ctx */) {
           info: '#31CCEC',
           warning: '#F2C037'
         },
-        notify: { /* look at QuasarConfOptions from the API card */ }
+        notify: { /* look at QuasarConfOptions from the API card */ },
+        loading: { /* look at QuasarConfOptions from the API card */ }
+      
       },
 
       // iconSet: 'material-icons', // Quasar icon set
@@ -122,7 +124,8 @@ module.exports = configure(function (/* ctx */) {
       // Quasar plugins
       plugins: [
         'Dialog',
-        'Notify'
+        'Notify',
+        'Loading'
       ]
     },
 
