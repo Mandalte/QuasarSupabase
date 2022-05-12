@@ -5,7 +5,7 @@
     </P>
 
   <p>
-    Pleasee confirm your email to finishing registering: <strong>{{$route.query.email}}</strong>
+    Please confirm your email to finishing registering: <strong>{{$route.query.email}}</strong>
   </p>
   </q-page>
 </template>
