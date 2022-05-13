@@ -1,7 +1,7 @@
-<template>
+<!-- <template>
   <div class="q-pa-md">
     <q-table
-      title="Produtos"
+      title="Proddutos"
       :rows="produtos"
       :columns="columns"
       color="primary"
@@ -9,6 +9,15 @@
       class="q-ma-sm"
       label="Show Loading"
     >
+
+      <template v-slot:body-cell-img_url="props">
+          <q-td :props="props">
+            <q-avatar>
+              <img :src="props.row.img_url" />
+            </q-avatar>
+          </q-td>
+      </template>
+
       <template v-slot:top-right>
         <div class="q-gutter-x-sm">
           <q-btn
@@ -16,8 +25,8 @@
             outline
             icon="mdi-plus"
             label="Nova"
-            color="primary" 
-            dense 
+            color="primary"
+            dense
             no-caps
             to="/register-produto"
           />
@@ -25,7 +34,7 @@
             outline
             dense
             color="primary"
-            icon-right="archive" 
+            icon-right="archive"
             no-caps
             @click="exportTable"
           />
@@ -33,30 +42,30 @@
       </template>
 
       <template v-slot:body-cell-actions="props">
-      <q-td :props="props" class="q-gutter-x-sm">
-        <q-btn color="info" icon="mdi-pencil-outline" :to="{name:'register-produto',params:{id:props.row.id}}" dense>
-          <q-tooltip
-            transition-show="rotate"
-            transition-hide="rotate"
-          >
-            Edit
-          </q-tooltip>
-        </q-btn>
-        <q-btn color="negative" icon="mdi-delete-outline" @Click="handleDeletarProduto(props.row)" dense>
-           <q-tooltip
-            transition-show="rotate"
-            transition-hide="rotate"
-            dense
-          >
-            Remove
-          </q-tooltip>
-        </q-btn>
-      </q-td>
-    </template>
+        <q-td :props="props" class="q-gutter-x-sm">
+          <q-btn color="info" icon="mdi-pencil-outline" :to="{name:'register-produto',params:{id:props.row.id}}" dense>
+            <q-tooltip
+              transition-show="rotate"
+              transition-hide="rotate"
+            >
+              Edit
+            </q-tooltip>
+          </q-btn>
+          <q-btn color="negative" icon="mdi-delete-outline" @Click="handleDeletarProduto(props.row)" dense>
+            <q-tooltip
+              transition-show="rotate"
+              transition-hide="rotate"
+              dense
+            >
+              Remove
+            </q-tooltip>
+          </q-btn>
+        </q-td>
+      </template>
     </q-table>
   </div>
-  <q-page-sticky to="/register-produto"   
-  position="bottom-right" 
+  <q-page-sticky to="/register-produto"
+  position="bottom-right"
   :offset="[18, 18]">
     <q-btn
       v-if="$q.platform.is.mobile"
@@ -84,11 +93,11 @@ const columns = [
     align: 'left',
   },
    {
-    name: 'img',
+    name: 'img_url',
     required: true,
     label: 'Foto',
     align: 'left',
-     field: row => row.img,
+     field: row => row.img_url,
     // format: val => `${val}`,
   },
   {
@@ -225,4 +234,4 @@ export default defineComponent ({
     }
   }
 })
-</script>
+</script> -->
