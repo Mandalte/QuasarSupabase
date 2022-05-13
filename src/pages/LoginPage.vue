@@ -3,20 +3,20 @@
     <q-form class="row justify-center" @submit.prevent="handleLogin">
       <p class="text-h4 text-center col-12 ">Login</p>
       <div class="col-md-4 col-sm-6 col-xs-10 q-gutter-y-lg">
-        <q-input 
-          label="Email" 
+        <q-input
+          label="Email"
           v-model="form.email"
           outlined
           placeholder="Escreva teu email"
           :rules="[val => !!val && validarEmail(val) || 'Escreva um email valido']"
           lazy-rules
-        />  
+        />
 
-        <q-input 
-        label="Senha" 
-        placeholder="Escreva a tua senha" 
-        v-model="form.password" 
-        outlined 
+        <q-input
+        label="Senha"
+        placeholder="Escreva a tua senha"
+        v-model="form.password"
+        outlined
         :type="isPwd ? 'password' : 'text'"
         :rules="[val => val.length >= 6 || 'A senha deve conter no minimo 6 caracteres']"
         lazy-rules
@@ -25,7 +25,7 @@
             <q-icon
               :name="isPwd ? 'visibility_off' : 'visibility'"
               class="cursor-pointer"
-              @click="isPwd = !isPwd"              
+              @click="isPwd = !isPwd"
             />
           </template>
         </q-input>
@@ -46,24 +46,24 @@
                 class="full-width"
                 flat
                 size="sm"
-                color = "secondary" 
-                to="/register" 
+                color = "secondary"
+                to="/register"
             />
-            
+
             <q-btn
                 label="recuperar senha"
                 class="full-width"
                 flat
                 size="sm"
-                color = "secondary" 
-                to="fogoutpassword" 
+                color = "secondary"
+                to="fogoutpassword"
             />
         </div>
 
 
-        
-       
-        
+
+
+
       </div>
     </q-form>
   </q-page>
