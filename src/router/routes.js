@@ -10,7 +10,7 @@ const routes = [
       { path: 'email-confirmation',name:'email-confirmation', component: () => import('pages/EmailConfirmationPage.vue') },
       { path: 'fogoutpassword',name:'fogoutpassword', component: () => import('pages/FogoutPasswordPage.vue') },
       { path: 'reset-password',name:'reset-password', component: () => import('pages/ResetPasswordPage.vue') }
-   
+
     ]
   },
   {
@@ -24,7 +24,7 @@ const routes = [
     ]
     // ,
     // meta: {
-    //   requiresAuth: true 
+    //   requiresAuth: true
     // }
   },
 

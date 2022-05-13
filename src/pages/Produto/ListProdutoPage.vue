@@ -1,7 +1,7 @@
-<!-- <template>
+<template>
   <div class="q-pa-md">
     <q-table
-      title="Proddutos"
+      title="Produtos"
       :rows="produtos"
       :columns="columns"
       color="primary"
@@ -234,4 +234,4 @@ export default defineComponent ({
     }
   }
 })
-</script> -->
+</script>
