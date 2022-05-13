@@ -19,7 +19,8 @@ const routes = [
     children: [
       { path: 'me',name:'me', component: () => import('pages/MePage.vue') },
       { path: 'list-category',name:'list-category', component: () => import('pages/category/ListCategoryPage.vue') },
-      { path: 'register-category/:id?',name:'register-category', component: () => import('pages/category/RegisterCategoriaPage.vue') }
+      { path: 'register-category/:id?',name:'register-category', component: () => import('pages/category/RegisterCategoriaPage.vue') },
+      { path: 'list-produto',name:'list-produto', component: () => import('pages/produto/ListProdutoPage.vue') }
     ]
     // ,
     // meta: {
