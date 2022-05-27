@@ -2,7 +2,7 @@ import useSupabase from "src/boot/supabase"
 import useAuthUser from "./UseAuthUser"
 
 export default function useApi(){
-    
+
     const {supabase} = useSupabase()
     const {user} = useAuthUser()
 
@@ -35,14 +35,10 @@ export default function useApi(){
         if(error) throw error
         return data
     }
-    const upadate = async(table,form) =>{
+    const update = async(table,form) =>{
         const{error,data} = await supabase
         .from(table)
-        .upadate([
-            {
-                ...form
-            }
-        ])
+        .update(form)
         .match({id:form.id})
         if(error) throw error
         return data
@@ -61,7 +57,7 @@ export default function useApi(){
         list,
         getById,
         post,
-        upadate,
+        update,
         remove
     }
 }

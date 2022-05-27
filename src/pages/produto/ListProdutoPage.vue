@@ -43,7 +43,8 @@
 
       <template v-slot:body-cell-actions="props">
         <q-td :props="props" class="q-gutter-x-sm">
-          <q-btn color="info" icon="mdi-pencil-outline" :to="{name:'register-produto',params:{id:props.row.id}}" dense>
+          <q-btn color="info" icon="mdi-pencil-outline"
+          :to="{name:'register-produto',params:{id:props.row.id, categoria_id:props.row.category_id}}" dense>
             <q-tooltip
               transition-show="rotate"
               transition-hide="rotate"

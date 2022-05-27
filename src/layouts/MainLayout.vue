@@ -12,7 +12,7 @@
         />
 
         <q-toolbar-title>
-          Stock 
+          Stock
         </q-toolbar-title>
 
         <div>
@@ -54,10 +54,10 @@
     <q-page-container>
       <router-view />
     </q-page-container>
-    
+
   </q-layout>
 </template>
-  
+
 <script>
 import EssentialLink from 'src/components/EssentialLink.vue'
 import { defineComponent, ref } from 'vue'
@@ -82,7 +82,7 @@ const linksList = [
   ,{
     title:'Produtos',
     caption:'',
-    icon:'mdi-product',
+    icon:'mdi-archive',
     routeName:'list-produto'
   }
 ]
@@ -112,7 +112,7 @@ export default defineComponent({
             router.replace({name:'login'})
           }
         )
-           
+
       }
 
     return {
