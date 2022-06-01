@@ -72,7 +72,7 @@ export default defineComponent({
     })
 
 
-    const handleRegisterCategoria =async()=>{
+    const handleRegisterCategoria = async()=>{
       if(route.params.id){
         await update(table,form.value)
         router.push({name:'list-category'})
