@@ -1,8 +1,9 @@
 import useSupabase from "src/boot/supabase"
 import useAuthUser from "./UseAuthUser"
+import {v4 as uuid4} from 'uuid'
 
 export default function useApi(){
-    
+
     const {supabase} = useSupabase()
     const {user} = useAuthUser()
 
@@ -35,14 +36,10 @@ export default function useApi(){
         if(error) throw error
         return data
     }
-    const upadate = async(table,form) =>{
+    const update = async(table,form) =>{
         const{error,data} = await supabase
         .from(table)
-        .upadate([
-            {
-                ...form
-            }
-        ])
+        .update(form)
         .match({id:form.id})
         if(error) throw error
         return data
@@ -57,11 +54,40 @@ export default function useApi(){
         return data
     }
 
+    const uploadingImg = async(img,storage)=>{
+      const imgName = uuid4()
+      const {error} =
+
+        supabase
+        .storage
+        .from(storage)
+        .upload(imgName,img,{
+          cacheControl:'3600',
+          upsert:false
+        })
+
+        const url = await getImgUrl(imgName,storage)
+
+        if(error) throw error
+        return url
+    }
+
+    const getImgUrl = async(imgName,storage)=>{
+      const { publicURL, error } = supabase
+      .storage
+      .from(storage)
+      .getPublicUrl(imgName)
+
+      if(error) throw error
+      return publicURL
+    }
+
     return{
         list,
         getById,
         post,
-        upadate,
-        remove
+        update,
+        remove,
+        uploadingImg
     }
 }

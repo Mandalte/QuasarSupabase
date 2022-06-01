@@ -16,7 +16,7 @@
             outline
             icon="mdi-plus"
             label="Nova"
-            color="primary"  
+            color="primary"
             no-caps
             to="/register-category"
           />
@@ -25,7 +25,7 @@
             outline
             dense
             color="primary"
-            icon-right="archive" 
+            icon-right="archive"
             no-caps
             @click="exportTable"
           />
@@ -34,16 +34,23 @@
 
       <template v-slot:body-cell-actions="props">
       <q-td :props="props" class="q-gutter-x-sm">
-        <q-btn color="info" icon="mdi-pencil-outline" :to="{name:'register-category',params:{id:props.row.id}}" dense>
-          <q-tooltip
-            transition-show="rotate"
-            transition-hide="rotate"
-          >
-            Edit
-          </q-tooltip>
+        <q-btn color="info"
+        icon="mdi-pencil-outline"
+        :to="{name:'register-category',params:{id:props.row.id}}"
+         dense>
+            <q-tooltip
+              transition-show="rotate"
+              transition-hide="rotate"
+            >
+              Edit
+            </q-tooltip>
         </q-btn>
-        <q-btn color="negative" icon="mdi-delete-outline" @Click="handleDeletarCategoria(props.row)" dense>
-           <q-tooltip
+        <q-btn color="negative"
+          icon="mdi-delete-outline"
+          @Click="handleDeletarCategoria(props.row)"
+          dense
+        >
+          <q-tooltip
             transition-show="rotate"
             transition-hide="rotate"
             dense
@@ -55,12 +62,12 @@
     </template>
     </q-table>
   </div>
-  <q-page-sticky to="/register-category"   
-  position="bottom-right" 
+  <q-page-sticky to="/register-category"
+  position="bottom-right"
   :offset="[18, 18]">
     <q-btn
       v-if="$q.platform.is.mobile"
-      :to="{name:'register-category'}"
+      :to="{name:'register-produto'}"
       fab
       icon="add"
       color="primary"
